@@ -48,11 +48,15 @@ export default function Home() {
   }, [activePageSearch]);
 
   if (loading) {
-    return <p>loading...</p>;
+    return (
+      <div className="h-screen w-screen flex justify-center items-center">
+        <p className="text-red-300 text-5xl">Loading...</p>
+      </div>
+    );
   }
 
   return (
-    <div className="px-40 space-y-[30px]">
+    <div className="px-10 md:px-20 2xl:px-40 space-y-[30px]">
       <div className="flex w-full justify-end  mt-20 ">
         <input
           className="w-80 px-4 h-10 border border-[#e6e6e6] rounded focus:outline-none"
@@ -71,7 +75,7 @@ export default function Home() {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
           {itemsSinglePage?.map((item) => (
             <CharacterCard item={item} key={item?.url} />
           ))}

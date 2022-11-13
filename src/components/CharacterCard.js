@@ -5,14 +5,13 @@ export default function CharacterCard({ item }) {
   let navigate = useNavigate();
   let parts = item?.url.split("/");
   let id = parts[parts.length - 2];
-  console.log(item);
 
   return (
     <div
       className="px-4 py-6 cursor-pointer border-2 border-[#e6e6e6] rounded"
       onClick={() => navigate(`/characters/${id}`)}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 justify-between">
         <div>
           <p className="text-[20px] ">
             Name:{" "}
